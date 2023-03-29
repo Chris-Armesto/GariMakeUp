@@ -1,0 +1,14 @@
+.menu{
+    display: flex;
+    justify-content: space-around;
+    background-color:  rgb(254, 196, 210);
+    font-weight: bolder;
+    font-family: cursive;
+    position: relative;
+}
+
+.nav-logo{
+    width: 100px;
+    margin-left: 5rem;
+    border-radius: 25%;
+}
