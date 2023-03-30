@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <h1>Gari MakeUp</h1>
       <NavBar/>
-      <ItemListContainer />
+      <ItemListContainer saludo="Bienvenidos!!!" />
     </div>
   );
 }
