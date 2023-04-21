@@ -1,12 +1,6 @@
-
-.fila{
+.item{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
-}
-h3{
-    text-align: center;
-    color: pink;
-    text-size-adjust: 16;
 }

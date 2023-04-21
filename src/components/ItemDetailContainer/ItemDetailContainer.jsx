@@ -1,40 +1,35 @@
-import React from 'react'
-import {useState, useEffect,useParams} from 'react'
+import React, { useState, useEffect } from 'react'
 import {pedirProductos} from '../../helpers/pedirProductos'
-import {imSpinner3} from 'react-icon'
-import {Item} from '../Item/Item'
-import { ItemDetail } from '../ItemDetail/ItemDetail'
+import {ImSpinner3} from 'react-icons/im'
+import {ItemDetail} from '../ItemDetail/ItemDetail'
+import { useParams } from 'react-router-dom'
 
 
 export const ItemDetailContainer = () => {
-  const [item, setItem] = useState(null)
 
-  const [loading, setLoading] = useState(false)
+    const [item, setItem] = useState(null)
 
-  useEffect(()=>{
-          
-    setLoading(true)
-    pedirProductos()
-    .then(res=>{
-      setItem(res.find(prod => prod.id === Number(Item.Id)))
-    })
-    .catch((error) => console.log(error))
-    .finally(()=>{
-      setLoading(false)
+    const [loading, setLoading] = useState(false)
 
-    })
-  },[Item.Id]
-  )
-  return (
-         <section>
-          {
+    const {itemId} = useParams()
+
+    useEffect(() =>{
+        setLoading(true)
+        pedirProductos()
+            .then(res=>{ setItem(res.find( prod => prod.id === parseInt(itemId)))
+            })
+            .catch((error) => console.log(error))
+            .finally(() => {
+                setLoading(false)
+            })
+    }, [itemId])
+  return(
+    <div>
+        {
             loading
-            ?<imSpinner3/>
-            :<ItemDetail {...item}/>
-          }
-         </section>
-  
-
-
-     )
+            ?<ImSpinner3/>
+            :<ItemDetail{...item}/>
+        }
+    </div>
+  )
 }

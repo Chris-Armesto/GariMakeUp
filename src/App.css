@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-image: '../public/besos.jpeg';
 }
 h1{
   color: rgb(233, 89, 114);
