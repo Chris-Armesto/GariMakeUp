@@ -10,25 +10,28 @@ import {
   Navigate,
   Route,
 } from 'react-router-dom'
-import './App.css'
+import './App.css';
+import { CartScreen } from './components/CartScreen/CartScreen';
+import { CartProvider } from './components/Context/CartContext';
+
 
 function App() {
-
-
   return (
-
+    <CartProvider>
       <div className='App'>
         <Router>
           <NavBar />
           <Routes>
-            <Route path='/' element={<ItemListContainer/>}/>
-            <Route path='/productos/:categoryId' element={<ItemListContainer/>}/>
-            <Route path='/detail/:itemId' element={<ItemDetailContainer/>}/>
-            <Route path='/count' element={<ItemCount/>}/>
-            <Route path='*' element={<Navigate to='/'/>} />
+            <Route path='/' element={<ItemListContainer />} />
+            <Route path='/productos/:categoryId' element={<ItemListContainer />} />
+            <Route path='/detail/:itemId' element={<ItemDetailContainer />} />
+            <Route path='/counter' element={<ItemCount />} />
+            <Route path='/cart' element={<CartScreen/>}/>
+            <Route path='*' element={<Navigate to='/' />} />
           </Routes>
         </Router>
       </div>
+    </CartProvider>
   );
 }
 
