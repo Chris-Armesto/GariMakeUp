@@ -3,11 +3,11 @@ import { Card, Button } from 'react-bootstrap'
 import { ItemCount } from '../ItemCount/ItemCount'
 import '../../data/stock'
 import './ItemDetail.css'
-import {useNavigate} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import { CartContext } from '../Context/CartContext';
 import { useContext } from 'react';
 
-export const ItemDetail = ({id, description, price, image, category, detalle, stock}) => {
+export const ItemDetail = ({id, name, description, price, image, category, detalle, stock}) => {
   
   const navigate = useNavigate()
   const volverHaciaAtras = () =>{
@@ -18,18 +18,19 @@ export const ItemDetail = ({id, description, price, image, category, detalle, st
 
   const[counter, setCounter] = useState (0)
 
-  const sumarAlCarrito =() =>{
-        const newItem ={
-          id,
-          description,
-          image,
-          price,
-          category,
-          counter
-        }
-      console.log(newItem)
-      addToCart(newItem)
-  }
+  const sumarAlCarrito = () =>{
+    const newItem = {
+      id,
+      name,
+      description,
+      image,
+      price,
+      category,
+      counter
+    }
+    console.log(newItem)
+    addToCart(newItem)
+}
 
 
 
@@ -47,6 +48,7 @@ export const ItemDetail = ({id, description, price, image, category, detalle, st
           <Button onClick={sumarAlCarrito} variant="danger">Comprar</Button>
           </Card.Body>
           <Button onClick={volverHaciaAtras} variant = 'danger'> Volver</Button>
+          <Link to='/cart'className='btn btn-info'>Ir al Carrito</Link>
       </Card>
     </div>
   )

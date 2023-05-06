@@ -13,6 +13,7 @@ import {
 import './App.css';
 import { CartScreen } from './components/CartScreen/CartScreen';
 import { CartProvider } from './components/Context/CartContext';
+import { CheckOut } from './components/CheckOut/CheckOut';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             <Route path='/counter' element={<ItemCount />} />
             <Route path='/cart' element={<CartScreen/>}/>
             <Route path='*' element={<Navigate to='/' />} />
+            <Route path='/checkout' element={<CheckOut/>}></Route>
           </Routes>
         </Router>
       </div>
