@@ -50,17 +50,18 @@ console.log(orden)
   ordenes.add(orden)
   .then((res) => {
     Swal.fire({
-        icon: 'succes',
-        title: 'Su compra fue realizada con exito!',
-        text: 'Su numero de compra: ${res.id} ',
-        footer: '<a href="Guarde su numero de Compra, Nos comunicaremos a la brevedad"</a>',
-        willClose: ()=>{ vaciarCarrito()}
-      })
-  }
-  )
-.finally (()=>{
-    console.log ('Operacion realizada con exito')
-})
+      icon: 'success',
+      title: 'Su compra fue realizada con éxitos',
+      text: `Su numero de compra: ${res.id}`,
+      willClose: () => {
+        vaciarCarrito()
+      }
+    })
+  })
+  .finally(() => {
+    console.log('Operacion realizada con exito')
+  })
+
 
 carrito.forEach((item)=>{
     const docRef=db.collection('productos').doc(item.id)
