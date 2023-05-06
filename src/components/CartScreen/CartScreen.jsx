@@ -17,6 +17,7 @@ export const CartScreen = () => {
       carrito.map((prod) =>(
         <>
         <div className='listado'>
+          <p>{prod.image}</p>
           <p>Producto: {prod.description}</p>
           <p>${prod.price}</p>
           <p>cantidad: {prod.counter}</p>
