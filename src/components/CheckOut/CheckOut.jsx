@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../Context/CartContext'
 import firebase from 'firebase'
-import 'firebase/firestore'
 import { getFirestore } from '../../firebase/config'
 import Swal from 'sweetalert2'
 
