@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React from 'react'
 /*<button onClick={resetear}>0</button>*/
 
 export const ItemCount = ({max, cantidad, modify}) => {
