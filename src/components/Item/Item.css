@@ -1,6 +1,20 @@
 .item{
+    align-items: center;
     text-align: center;
     background-color: rgb(251, 142, 162);
     text-size-adjust: 12;
     color: rgb(64, 0, 33);
+}
+.imageitem{
+    width: 250px;
+    height: 300px;
+    border-radius: 25%;
+    align-content: center;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+h2 {
+    font-size: larger;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(216, 31, 62);
 }

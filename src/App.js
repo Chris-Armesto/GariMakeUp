@@ -14,6 +14,8 @@ import './App.css';
 import { CartScreen } from './components/CartScreen/CartScreen';
 import { CartProvider } from './components/Context/CartContext';
 import { CheckOut } from './components/CheckOut/CheckOut';
+import { AboutMe } from './components/About Me/AboutMe';
+import { Footer } from './components/Footer/Footer';
 
 
 function App() {
@@ -29,8 +31,10 @@ function App() {
             <Route path='/counter' element={<ItemCount />} />
             <Route path='/cart' element={<CartScreen/>}/>
             <Route path='*' element={<Navigate to='/' />} />
-            <Route path='/checkout' element={<CheckOut/>}></Route>
+            <Route path='/checkout' element={<CheckOut/>}/>
+            <Route path='/aboutme' element={<AboutMe/>}/>
           </Routes>
+        <Footer  />
         </Router>
       </div>
     </CartProvider>

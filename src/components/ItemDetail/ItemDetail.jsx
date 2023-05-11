@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import { Card, Button } from 'react-bootstrap'
 import { ItemCount } from '../ItemCount/ItemCount'
-import '../../data/stock'
 import './ItemDetail.css'
 import {Link, useNavigate} from 'react-router-dom'
 import { CartContext } from '../Context/CartContext';
@@ -32,17 +31,17 @@ export const ItemDetail = ({id, name, description, price, image, category, detal
     addToCart(newItem)
 }
 
-
+/*<Card.Title>Codigo:{id}</Card.Title>*/
 
   return (
     <div className='item'>
       <Card style={{ width: '25rem' }}>
         <Card.Img variant="top" src={image} />
         <Card.Body>
-          <Card.Title>Codigo:{id}</Card.Title>
-          <Card.Title>{description}</Card.Title>
+          
+          <Card.Title><h1>{description}</h1></Card.Title>
           <Card.Title>${price}</Card.Title>
-          <Card.Title>DETALLES DE PRODUCTO : {detalle}</Card.Title>
+          <Card.Title><p className='detalle'>DETALLES DE PRODUCTO : {detalle}</p></Card.Title>
           <Card.Title>Categoria: {category}</Card.Title>
           <ItemCount max ={stock} modify={setCounter} cantidad={counter} />
           <Button onClick={sumarAlCarrito} variant="danger">Comprar</Button>

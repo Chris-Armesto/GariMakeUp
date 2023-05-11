@@ -1,0 +1,9 @@
+ .container {
+    align-items: flex-start;
+}
+
+.listado{
+    align-items: normal;
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
+}

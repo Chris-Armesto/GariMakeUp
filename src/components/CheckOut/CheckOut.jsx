@@ -94,15 +94,10 @@ carrito.forEach((item)=>{
             <label htmlfor="telefono">Telefono</label>
             <input type='text' className='form-control' onChange={(e) => setTelefono(e.target.value)} value={telefono}/>
         </div>
-    <button type='submit' className='btn btn-info'>Finalizar</button>
-    <Link to='/cart' className='btn btn-info'>Volver al Carrito</Link>
-
-
-
+    <button type='submit' className='btn btn-danger'>Finalizar</button>
+    <Link to='/cart' className='btn btn-danger'>Volver al Carrito</Link>
+    <Link to='/' className='btn btn-danger'>Seguir comprando</Link>
     </form>
-
-
-
     </div>
   )
 }

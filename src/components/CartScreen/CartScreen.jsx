@@ -3,6 +3,7 @@ import { Button } from 'react-bootstrap'
 import { BsFillTrashFill } from "react-icons/bs";
 import { CartContext } from '../Context/CartContext';
 import { Link } from 'react-router-dom';
+import './CartScreen.css'
 
 export const CartScreen = () => {
 
@@ -17,7 +18,6 @@ export const CartScreen = () => {
       carrito.map((prod) =>(
         <>
         <div className='listado'>
-          <p>{prod.image}</p>
           <p>Producto: {prod.description}</p>
           <p>${prod.price}</p>
           <p>cantidad: {prod.counter}</p>
